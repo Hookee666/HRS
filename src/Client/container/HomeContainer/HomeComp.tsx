@@ -16,26 +16,33 @@ import { Layout } from 'antd';
 import projectComp from '../../container/ProjectContainer/ProjectContainer'
 import WeekPlanListContainer from '../weekPlanListContainer/WeekPlanListContainer'
 import {SiderComponent} from '../../component/Sider/SiderComponent'
-import {Route,Switch} from 'react-router-dom'
+import {Route,Switch,RouteComponentProps} from 'react-router-dom'
 const { Header, Footer, Sider, Content } = Layout;
-export interface IHomeContainerProps {
+export interface IHomeContainerProps extends RouteComponentProps<any>{
+    SiderCollapsed?:boolean
+    onSiderCollapse?:()=>void
 }
 
-const HomeContainer: React.SFC<IHomeContainerProps> = (props) => {
+const HomeComp: React.SFC<IHomeContainerProps> = (props) => {
     return (
         <Layout>
-            <Sider width="260" style={{minHeight:'100vh'}}><SiderComponent theme="light" color="orange"/></Sider>
+            <Sider   collapsible
+                     collapsed={true}
+                     onCollapse={()=>{
+                         props.onSiderCollapse();
+                     }}
+                     width="260" style={{minHeight:'100vh'}}><SiderComponent theme="light" color="orange"/></Sider>
             <Layout>
                 <Header className="home_header">中控系统</Header>
                 <Content>
                     <Switch>
                     {/*<LightComp/>*/}
-                    <Route path="/" exact component={projectComp}/>
-                    <Route path='/project/week_list' component={WeekPlanListContainer}></Route>
+
+                    <Route path={`${props.match.url}/project/week_list`} component={WeekPlanListContainer}></Route>
                     </Switch>
                 </Content>
             </Layout>
         </Layout>
     );
 };
-export default HomeContainer;
+export default HomeComp;

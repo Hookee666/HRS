@@ -10,14 +10,93 @@
 @mixin Login__ColorBG($degree,$height){
   transform: skewY($degree);
   background-image: linear-gradient(-89deg, #EA785A 0%, #EE8768 30%, #EE9F7A 70%);
-  z-index: 1;
   height: $height;
   width: 100%;
   position: absolute;
   transform-origin: 0;
   top: 0;
 }
-.LoginFormContainer{
+.Login__Container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(27.5% - 20px);
+  width: 40px;
+  height: calc(20% + 32px);
+  background: rgba(255,255,255,0.8);
+}
+.LoginFormContainer {
+  position: absolute;
+  width: 35%;
+  height: 45%;
+  top: 20%;
+  left: 10%;
+  padding: 30px 0 40px 0;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6) inset, 0 0 30px rgba(255, 255, 255, 0.6);
+}
+.LoginForm__Deco {
+  width: 60px;
+  height: 4px;
+  border-radius: 2px 2px;
+  background: rgba(128, 128, 128, 0.6);
+
+}
+.LoginForm__Username, .LoginForm__Password {
+  width: 80%;
+  height: 25%;
+  background: rgba(255,255,255,0.6);
+  display: flex;
+  border-radius: 40px 40px;
+  padding: 0 20px;
+}
+.LoginForm__Username .UsernameIcon {
+  width: 15%;
+  margin: 15px;
+  background: url('../../asset/imgs/user2.png') no-repeat;
+  background-size: contain;
+}
+.LoginForm__Password .PasswordIcon {
+  width: 15%;
+  margin: 15px;
+  background: url('../../asset/imgs/password.png') no-repeat;
+  background-size: contain;
+}
+.LoginForm__Username input, .LoginForm__Password input {
+  height: 100%;
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 2.5vh;
+  outline: none;
+}
+.LoginForm__LoginButton {
+  width: 80%;
+  height: 25%;
+}
+.LoginForm__LoginButton button {
+  width: 100%;
+  height: 100%;
+  background: rgba(246,123,85,1);
+  border-radius: 40px 40px;
+  border: none;
+  color: white;
+  font-size: 3vh;
+  outline: none;
+  transition: box-shadow 0.7s, background 0.7s;
+}
+.LoginForm__LoginButton button:hover {
+  cursor: pointer;
+  background: rgba(248, 146, 114, 1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.7s, background 0.7s;
+}
+.LoginFormContainer_box{
   width: 100%;
   height: 100%;
 }
@@ -26,6 +105,15 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+  &::after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    z-index: 50;
+    background-image: url('../../asset/imgs/ElCapitan.jpg');
+  }
   .Login__ColorBG--orange{
     @include Login__ColorBG(-9deg,100%)
   }
@@ -33,10 +121,16 @@
     .Login__ColorBG--orange{
       @include Login__ColorBG(-29deg,1020px)
     }
+
   }
 
   .Login__LowerColorBG--Gray{
 
+  }
+  @media (max-width: 991px) {
+    img{
+      display: none !important;
+    }
   }
   @media (min-width: 1200px) {
     .hidden-xl-up{
@@ -44,7 +138,8 @@
     }
   }
   .illustrations{
-    position:relative;top:-603px;right:-512px;z-index:2
+    position:relative;top:-603px;right:-512px;
+    z-index:200;
   }
   @media (min-width: 1200px) and (max-width: 1299px)
   {.illustrations,.illustrations{
@@ -61,26 +156,4 @@
     .illustrations,.illustrations{
       top:-665px;right:-640px}}
 }
-//
-.home .hero .illustrations,.home .inner .illustrations
-{position:relative;top:-603px;right:-512px;z-index:2}
-@media (min-width: 1200px) and (max-width: 1299px){
-  .home .hero .illustrations,.home .inner .illustrations
-  {right:-533px;top:-744px}}
-@media (min-width: 1300px) and (max-width: 1439px){
-  .home .hero .illustrations,.home .inner .illustrations
-  {right:-601px;top:-782px}}
-@media (min-width: 90em){
-  .home .hero .illustrations,.home .inner .illustrations{
-    top:-761px;right:-622px}}
-@media (min-width: 105em){
-  .home .hero .illustrations,.home .inner .illustrations{
-    top:-665px;right:-640px}}
-.home .hero .diag,.home .inner .diag{height:100%;overflow:hidden;width:100%;position:absolute;top:0;transform-origin:0;-webkit-transform-origin:0}
-.home .hero .hero-diag,.home .inner .hero-diag{transform:skewY(-9deg);-webkit-transform:skewY(-9deg);background-image:linear-gradient(-89deg, #EA785A 0%, #EE8768 30%, #EE9F7A 70%);z-index:1}
-@media (min-width: 62em){
-  .home .hero .hero-diag,.home .inner .hero-diag
-  {transform:skewY(-29deg);-webkit-transform:skewY(-29deg)}}
-.home .hero .hero-lower-diag,.home .inner .hero-lower-diag {
-  background-image:linear-gradient(-182deg, #FBFCFC 0%, #EAEEF2 74%);background-image:linear-gradient(to bottom, #e0e7ef, #fbfcfc 90%);bottom:-132px}
-.home .logos{position:relative;bottom:60px;height:0;text-align:center}@media (min-width: 60em){.home .logos{bottom:100px}}
+
