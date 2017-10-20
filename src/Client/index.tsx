@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import {store} from './store/store'
 import './asset/styles/Normalize.scss'
 import './asset/styles/style.scss'
+import './asset/styles/essos.js'
 ReactDOM.render(
     <Provider store={store}>
 

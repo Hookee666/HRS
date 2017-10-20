@@ -11,10 +11,10 @@ import * as React from 'react';
 import LoginComp from '../LoginContainer/LoginComp'
 import './app.scss';
 import HomeContainer from '../HomeContainer/HomeComp'
-import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import {HashRouter,Switch,Route} from 'react-router-dom'
 const App=()=>{
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
             <Route path="/" exact={true} render={()=><LoginComp/>}
             >
@@ -31,7 +31,7 @@ const App=()=>{
             }}>
             </Route>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     )
 
 };

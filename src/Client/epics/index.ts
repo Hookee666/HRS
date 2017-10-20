@@ -9,7 +9,7 @@
  */
 'use strict';
 import { combineEpics } from 'redux-observable';
-import {} from './autoLogEpic'
+
 export const rootEpic = combineEpics(
 
 );

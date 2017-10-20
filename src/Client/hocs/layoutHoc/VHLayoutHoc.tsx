@@ -34,7 +34,7 @@ interface orderProps {
 }
 
 export function VHLayoutHoc() {
-    return function (Comp: React.ComponentClass<any> | React.SFC<any>) {
+    return function (Comp:React.ComponentClass<any> | React.SFC<any> ) {
         return class VHLayoutHocComponent extends PureComponent <orderProps, any> {
 
             render() {

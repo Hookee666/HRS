@@ -4,11 +4,12 @@
 import * as koa from 'koa'
 import * as koaBody from 'koa-bodyparser';
 import * as koaRouter from 'koa-router';
+import * as serve from 'koa-static'
 import * as serialport from 'serialport'
 import {initController} from "./Controller/index";
 import * as db from './db/db'
 const app = new koa();
-db.connecting();
+
 const router = new koaRouter();
 const cors = require('kcors');
 app.use(cors());
@@ -32,6 +33,7 @@ app.use(async function (ctx, next) {
     console.log(`${ctx.method} ${ctx.url} - ${ms}`);
 });
 // response
+app.use(serve('./public'))
 initController(app)
 
 

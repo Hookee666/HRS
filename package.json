@@ -14,7 +14,7 @@
     "devserver": {
       "command": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "DEV"
       }
     },
     "build": {
@@ -90,6 +90,8 @@
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
+    "koa-views": "^6.1.1",
     "moment": "^2.18.1",
     "mysql2": "^1.4.2",
     "react": "^15.3.2",

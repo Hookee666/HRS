@@ -15,16 +15,13 @@
   padding: 30px;
   background-color:white ;
   display: flex;
-  flex-direction: column;
-  .WeekNoPlanBox{
-    width:100%;
-    height: 160px;
-    background-color: orangered;
+  flex-direction: row;
+  .treeList{
+    width: 120px;
+
   }
-  .weekPlanTable{
-    width:100%;
-    margin-top: 30px;
-    flex: 1;
-    background-color: green;
+  .chart{
+    flex:1;
+
   }
 }

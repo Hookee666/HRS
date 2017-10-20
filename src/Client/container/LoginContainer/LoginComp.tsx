@@ -12,8 +12,8 @@
 'use strict'
 import React, {PureComponent} from 'react';
 import './LoginComp.scss'
-import bg from '../../asset/imgs/isometric-desk.png';
-import bgmd from '../../asset/imgs/isometric-desk-md.png'
+const bg =require( '../../asset/imgs/isometric-desk.png');
+const bgmd =require('../../asset/imgs/isometric-desk-md.png');
 import {Icon} from 'antd'
 export interface ILoginContainerProps {
 }
@@ -36,7 +36,9 @@ const LoginComp: React.SFC<ILoginContainerProps> = (props) => {
                 <input type="password" placeholder="密码"/>
             </div>
             <div className="LoginForm__LoginButton">
-                <button type="button">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                <button type="button" onClick={()=>{
+                    window.location.hash='/6sHRSystem/project/week_list'
+                }}>登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
             </div>
         </div>
         </div>
