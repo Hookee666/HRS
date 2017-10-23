@@ -51,7 +51,7 @@ class SIderContainerComponent extends PureComponent <orderProps, any> {
                      collapsible
                      collapsed={this.state.collapsed}
                      onCollapse={this.onCollapse}
-                     width="260" style={{minHeight:'100vh'}}><SiderComponent Content={<SiderMenu theme={'light'}></SiderMenu>} color="orange" logo={cecLogo} collapsed={this.state.collapsed}/></Sider>
+                     width={260} style={{minHeight:'100vh'}}><SiderComponent Content={<SiderMenu theme={'light'}></SiderMenu>} color="orange" logo={cecLogo} collapsed={this.state.collapsed}/></Sider>
         )
     }
 }

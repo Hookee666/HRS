@@ -17,7 +17,7 @@ import {SiderComponent} from '../../component/Sider/SiderComponent'
 import InfoTablesContainer from '../InfoTablesContainer/InfoTablesContainer'
 import projectComp from '../../container/ProjectContainer/ProjectContainer'
 import WeekPlanListContainer from '../weekPlanListContainer/WeekPlanListContainer'
-import Sider from '../SiderContainer/SIderContainer'
+import Sider from '../SiderContainer/SiderContainer'
 import {Route,Switch,RouteComponentProps} from 'react-router-dom'
 const { Header, Content } = Layout;
 export interface IHomeContainerProps extends RouteComponentProps<any>{
