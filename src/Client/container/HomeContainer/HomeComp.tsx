@@ -13,9 +13,8 @@
 import React, {PureComponent} from 'react';
 import './HomeContainer.scss';
 import { Layout } from 'antd';
-import projectComp from '../../container/ProjectContainer/ProjectContainer'
-import WeekPlanListContainer from '../weekPlanListContainer/WeekPlanListContainer'
 import {SiderComponent} from '../../component/Sider/SiderComponent'
+import InfoTablesContainer from '../InfoTablesContainer/InfoTablesContainer'
 import {Route,Switch,RouteComponentProps} from 'react-router-dom'
 const { Header, Footer, Sider, Content } = Layout;
 export interface IHomeContainerProps extends RouteComponentProps<any>{
@@ -33,13 +32,12 @@ const HomeComp: React.SFC<IHomeContainerProps> = (props) => {
                      }}
                      width="260" style={{minHeight:'100vh'}}><SiderComponent theme="light" color="orange"/></Sider>
             <Layout>
-                <Header className="home_header">中控系统</Header>
+                <Header className="home_header">人力资源管理系统</Header>
                 <Content>
-                    <Switch>
-                    {/*<LightComp/>*/}
-
-                    <Route path={`${props.match.url}/project/week_list`} component={WeekPlanListContainer}></Route>
-                    </Switch>
+                    {/*<Switch>*/}
+                        {/*<Route path={`${props.match.url}/project/week_list`} component={WeekPlanListContainer}/>*/}
+                    {/*</Switch>*/}
+                    <InfoTablesContainer/>
                 </Content>
             </Layout>
         </Layout>

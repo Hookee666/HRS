@@ -26,9 +26,9 @@ const SiderComponent: React.SFC<ISiderComponentProps> = (props) => {
         <div className="sidebar" data-color={color} data-image="assets/img/sidebar-5.jpg">
             <div className="sidebar-wrapper">
                 <div className="logo">
-                    <a href="https://github.com/whisperfairy/" className="simple-text">
-                        中电六所
-                    </a>
+                    {/*<a href="https://github.com/whisperfairy/" className="simple-text">*/}
+                        {/*中电六所*/}
+                    {/*</a>*/}
                 </div>
 
                 <Menu

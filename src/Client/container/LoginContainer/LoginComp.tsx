@@ -25,6 +25,7 @@ const LoginComp: React.SFC<ILoginContainerProps> = (props) => {
         <div className="LoginFormContainer_box">
         <div className="LoginFormContainer">
             <div className="LoginForm__Deco"/>
+            <div className="LoginForm__Title">人力资源管理系统</div>
             <div className="LoginForm__Username">
 
                 <span className="UsernameIcon"/>
