@@ -52,7 +52,7 @@ var baseConfig = {
                             }),
                             useBabel:true,
                             useCache:true,
-                            configFileName:path.resolve(config.dirname,'webpack/Webtsconfig.json')
+                            configFileName:path.resolve(config.dirname,'./webpack/Webtsconfig.json')
                         }
                     }
                 ],
