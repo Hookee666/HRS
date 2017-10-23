@@ -12,8 +12,8 @@
 'use strict'
 import React, {PureComponent} from 'react';
 import './LoginComp.scss'
-const bg =require( '../../asset/imgs/isometric-desk.png');
-const bgmd =require('../../asset/imgs/isometric-desk-md.png');
+import  bg from  '../../asset/imgs/isometric-desk.png'
+import  bgmd from '../../asset/imgs/isometric-desk-md.png'
 import {Icon} from 'antd'
 export interface ILoginContainerProps {
 }

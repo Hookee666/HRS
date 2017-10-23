@@ -17,11 +17,11 @@
         "forkChecker": true
     },
     "include": [
-        "../src/Client/*",
+        "../src/Client/**/*",
         "../declarations.d.ts"
     ],
     "exclude": [
         "node_modules",
-        "../src/Server/*"
+        "../src/Server/**/*"
     ]
 }

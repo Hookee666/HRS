@@ -103,7 +103,6 @@
     "redux-observable": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "reveal.js": "^3.4.1",
-    "rxjs": "^5.4.3",
-    "serialport": "^5.0.0"
+    "rxjs": "^5.4.3"
   }
 }

@@ -16,11 +16,10 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {SiderComponent} from '../../component/Sider/SiderComponent'
 import {Layout} from 'antd'
-const cecLogo =require ('../../asset/imgs/CECLogo.png')
+import cecLogo from '../../asset/imgs/CECLogo.png'
 const {Sider} = Layout
 import "./SiderContainer.scss"
 import SiderMenu from './SiderMenuContainer/SiderMenuContainer'
-import {Light} from "../../../Server/Controller/LightController";
 function mapStatetoProps(state, ownProps) {
     return {}
 }

@@ -49,4 +49,4 @@ class EmployeeSearchContainerComponent extends PureComponent <orderProps, any> {
     }
 }
 
-return connect(mapStatetoProps, mapDispatchtoProps)(EmployeeSearchContainerComponent)
+export default connect(mapStatetoProps, mapDispatchtoProps)(EmployeeSearchContainerComponent)
