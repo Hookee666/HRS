@@ -23,15 +23,16 @@ const SiderMenuContainer: React.SFC<ISiderMenuContainerProps> = (props) => {
     return <Menu
         mode="inline"
         theme={props.theme}
+        onClick={({item})=>{
+           window.location.hash=item.props.Route
+        }}
     >
         <SubMenu key="sub-m0" title={<span><Icon type="mail" /><span>人力资源</span></span>}>
             <SubMenu key="sub-m0-1" title={<span><Icon type="mail" /><span>人员管理</span></span>}>
                 <MenuItem key={"sub-m0-1-1"}>
                     人员录入
                 </MenuItem>
-                <MenuItem key={"sub-m0-1-2"} onClick={()=>{
-                    window.location.hash="/6sHRSystem/employee/search"
-                }}>
+                <MenuItem Route={'/6sHRSystem/employee/search'} key={"sub-m0-1-2"}>
                     人员信息
                 </MenuItem>
                 <MenuItem key={"sub-m0-1-3"}>
