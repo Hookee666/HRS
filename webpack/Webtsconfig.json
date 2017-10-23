@@ -17,7 +17,7 @@
         "forkChecker": true
     },
     "include": [
-        "../src/**/*",
+        "../src/Client/*",
         "../declarations.d.ts"
     ],
     "exclude": [
