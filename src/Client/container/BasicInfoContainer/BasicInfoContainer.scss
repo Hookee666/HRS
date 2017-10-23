@@ -1,0 +1,20 @@
+.BasicInfoContainer table {
+  width: 100%;
+  font-size: 12px;
+}
+.BasicInfoContainer tr td {
+  padding: 6px;
+}
+.BasicInfo__row--dark {
+  background-color: rgba(222, 156, 75, 0.3);
+}
+.photo {
+  background-color: white;
+  width: 15%;
+}
+.BasicInfo__field {
+  width: 15%;
+}
+.BasicInfo__data {
+  width: 35%;
+}

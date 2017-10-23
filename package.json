@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "devserver:win": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js",
     "devserver": "./node_modules/.bin/better-npm-run devserver",
     "build": "npm run clean && ./node_modules/.bin/better-npm-run build",
     "clean": "./node_modules/.bin/rimraf ./dist",

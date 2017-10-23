@@ -13,6 +13,8 @@
 import React, {PureComponent} from 'react';
 import './HomeContainer.scss';
 import { Layout } from 'antd';
+import {SiderComponent} from '../../component/Sider/SiderComponent'
+import InfoTablesContainer from '../InfoTablesContainer/InfoTablesContainer'
 import projectComp from '../../container/ProjectContainer/ProjectContainer'
 import WeekPlanListContainer from '../weekPlanListContainer/WeekPlanListContainer'
 import Sider from '../SiderContainer/SIderContainer'
@@ -30,7 +32,7 @@ const HomeComp: React.SFC<IHomeContainerProps> = (props) => {
                 <Content>
                     <Switch>
                     {/*<LightComp/>*/}
-                       <Route path={`${props.match.url}/project/week_list`} component={WeekPlanListContainer}></Route>
+                       <Route path={`${props.match.url}/project/week_list`} component={InfoTablesContainer}></Route>
                         <Route path={`${props.match.url}/employee/search`} component={WeekPlanListContainer}></Route>
 
                     </Switch>
