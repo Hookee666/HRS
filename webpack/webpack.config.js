@@ -38,12 +38,12 @@ var baseConfig = {
             {
                 test: /\.tsx?$/,
                 use:[
-                    // {
-                    //     loader: 'babel-loader',
-                    //     options:{
-                    //         cacheDirectory:true
-                    //     }
-                    // },
+                    {
+                        loader: 'babel-loader',
+                        options:{
+                            cacheDirectory:true
+                        }
+                    },
                     {
                         loader: "awesome-typescript-loader",
                         options:{
@@ -52,7 +52,7 @@ var baseConfig = {
                             }),
                             useBabel:true,
                             useCache:true,
-                            configFileName:path.resolve(__dirname,'../webpack/Webtsconfig.json')
+                            configFileName:path.resolve(config.dirname,'webpack/Webtsconfig.json')
                         }
                     }
                 ],
@@ -122,27 +122,28 @@ var PROD_Config =merge(baseConfig,{
     plugins:[
         new webpack.DefinePlugin({
             //判断当前是否处于开发状态
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env': {NODE_ENV: '"production"'},
+            DEBUG: false
         }),
-
-        // new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         warnings: false,
-        //         screw_ie8: true,
-        //         conditionals: true,
-        //         unused: true,
-        //         comparisons: true,
-        //         sequences: true,
-        //         dead_code: true,
-        //         evaluate: true,
-        //         if_return: true,
-        //         join_vars: true
-        //     },
-        //     output: {
-        //         comments: false
-        //     }
-        // }),
-        // new webpack.HashedModuleIdsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                screw_ie8: true,
+                drop_console:true,
+                conditionals: true,
+                unused: true,
+                comparisons: true,
+                sequences: true,
+                dead_code: true,
+                evaluate: true,
+                if_return: true,
+                join_vars: true
+            },
+            output: {
+                comments: false
+            }
+        }),
+        new webpack.HashedModuleIdsPlugin(),
         new ExtractTextPlugin({filename:'assets/styles/[name]_[hash].bundle.css', allChunks: true}),
         new HtmlWebpackPlugin({title:config.title}),
         new webpack.optimize.ModuleConcatenationPlugin(),
@@ -214,12 +215,11 @@ const DEV_Config=merge(baseConfig, {
     plugins:[
         new webpack.DefinePlugin({
             //判断当前是否处于开发状态
-            __DEV__: JSON.stringify(true),
+            DEBUG: true
         }),
         new webpack.HotModuleReplacementPlugin(),
         //activates HMR
         new webpack.NamedModulesPlugin()
-
         //prints more readanpmble module names in the browser console on HMR updates
         // new ExtractTextPlugin({filename:path.join(config.dirname,'dist','bundle.css'), allChunks: true})
     ],

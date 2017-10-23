@@ -9,9 +9,6 @@
  */
 
 
-
-
-
 'use strict';
 import * as React from 'react';
 import {PureComponent} from 'react';
@@ -22,6 +19,8 @@ import {Layout} from 'antd'
 const cecLogo =require ('../../asset/imgs/CECLogo.png')
 const {Sider} = Layout
 import "./SiderContainer.scss"
+import SiderMenu from './SiderMenuContainer/SiderMenuContainer'
+import {Light} from "../../../Server/Controller/LightController";
 function mapStatetoProps(state, ownProps) {
     return {}
 }
@@ -53,7 +52,7 @@ class SIderContainerComponent extends PureComponent <orderProps, any> {
                      collapsible
                      collapsed={this.state.collapsed}
                      onCollapse={this.onCollapse}
-                     width="260" style={{minHeight:'100vh'}}><SiderComponent theme="light" color="orange" logo={cecLogo} collapsed={this.state.collapsed}/></Sider>
+                     width="260" style={{minHeight:'100vh'}}><SiderComponent Content={<SiderMenu theme={'light'}></SiderMenu>} color="orange" logo={cecLogo} collapsed={this.state.collapsed}/></Sider>
         )
     }
 }

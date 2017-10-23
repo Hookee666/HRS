@@ -24,13 +24,15 @@ export interface IHomeContainerProps extends RouteComponentProps<any>{
 const HomeComp: React.SFC<IHomeContainerProps> = (props) => {
     return (
         <Layout>
-            <Sider></Sider>
+            <Sider content></Sider>
             <Layout>
                 <Header className="home_header">人力资源管理系统</Header>
                 <Content>
                     <Switch>
                     {/*<LightComp/>*/}
                        <Route path={`${props.match.url}/project/week_list`} component={WeekPlanListContainer}></Route>
+                        <Route path={`${props.match.url}/employee/search`} component={WeekPlanListContainer}></Route>
+
                     </Switch>
                 </Content>
             </Layout>

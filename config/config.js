@@ -36,5 +36,6 @@ if (process.env.NODE_ENV === Environment.PROD || process.env.NODE_ENV === 'PRODU
 
     config.env=Environment.PROD;
 }
+console.log(config.ClientDir);
 module.exports.config = config;
 module.exports.Environment=Environment;
